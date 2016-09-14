@@ -18,7 +18,7 @@ Abstract.stopScanningEmitScanStop(bindings, Mock, function(mock, sandbox){
 });
 
 Abstract.emitStateChange(bindings, Mock, function(mock, sandbox){
-
+  console.log('i dont know what to do here.  mocke.emit() ?');
 });
 
 Abstract.emitDiscover(bindings, Mock, function(mock, sandbox){
