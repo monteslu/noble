@@ -97,7 +97,9 @@ var emitStateChange = function(bindings, Native, setup) {
     var mock;
 
     beforeEach(function() {
+      console.log('start test');
       mock = new Native(bindings, sandbox);
+      console.log('native created');
     });
 
     afterEach(function () {
@@ -107,12 +109,15 @@ var emitStateChange = function(bindings, Native, setup) {
 
     it('should emit stateChange', function() {
       var eventSpy = sandbox.spy();
+      console.log('start should emit stateChange');
       bindings.once('stateChange', eventSpy);
 
       if (typeof setup == 'function')
         setup(mock, sandbox);
 
-      eventSpy.calledWithExactly(a.stateString).should.equal(true);
+      setTimeout(function(){
+        eventSpy.calledWithExactly(a.stateString).should.equal(true);
+      }, 1000);
     });
 
   });

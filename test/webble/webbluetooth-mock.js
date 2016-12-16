@@ -73,7 +73,9 @@ function Mock(bindings, sandbox){
 
 function NativeBluetooth() {}
 util.inherits(NativeBluetooth, events.EventEmitter);
-NativeBluetooth.prototype.requestDevice = function(){};
+NativeBluetooth.prototype.requestDevice = function(){
+  return Promise.resolve('ok');
+};
 
 function NativeDevice() {}
 util.inherits(NativeDevice, events.EventEmitter);
